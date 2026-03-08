@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# 💸 Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A full-stack expense tracking app with analytics, charts, and smart budget predictions.
 
-Currently, two official plugins are available:
+🔗 **Live Site:** [ai-expense-tracker-puce.vercel.app](https://ai-expense-tracker-puce.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ➕ Add and delete expenses with amount, category, description, date, and payment method
+- 📊 Analytics dashboard with daily bar chart and category pie chart
+- 🔮 Smart budget predictions — projects your monthly spend based on daily averages
+- 🚨 Budget overrun alerts when projected spending exceeds $2,000
+- 🗂️ Category breakdown table with percentage of total and budget comparison
+- 🔐 User authentication via Supabase
+- 📱 Fully responsive design
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Technology | Purpose |
+| ---------- | ------- |
+| React 18 + TypeScript | UI & type safety |
+| Vite | Build tool & dev server |
+| Redux Toolkit | Global state management |
+| Tailwind CSS | Styling |
+| Recharts | Bar & pie chart visualizations |
+| Supabase | Authentication & database |
+| Vercel | Deployment |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/panugantidharmaja/ai-expense-tracker.git
+
+# Navigate into the project
+cd ai-expense-tracker
+
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Create a `.env` file in the root:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
+
+Then start the dev server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 📦 Build & Deploy
+
+```bash
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+Deployed on **Vercel** — every push to `main` auto-deploys. 🎉
+
+---
+
+## 📁 Project Structure
+
+ai-expense-tracker/
+├── public/
+├── src/
+│   ├── components/
+│   │   └── layout/
+│   ├── config/
+│   │   └── supabaseClient.ts
+│   ├── pages/
+│   │   └── Analytics.tsx
+│   ├── store/
+│   │   ├── hooks.ts
+│   │   ├── store.ts
+│   │   └── slices/
+│   │       └── expenseSlice.ts
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── tailwind.config.js
+└── vite.config.ts
+
+---
+
+## 📬 Contact
+
+- **Portfolio:** [my-portfolio-pied-kappa-75.vercel.app](https://my-portfolio-pied-kappa-75.vercel.app)
+- **GitHub:** [@panugantidharmaja](https://github.com/panugantidharmaja)
+
+---
+
+⭐ If you found this useful, feel free to star the repo!
